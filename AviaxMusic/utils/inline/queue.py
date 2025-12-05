@@ -1,5 +1,6 @@
+import config
 from typing import Union
-
+from config import OWNER_ID
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -66,10 +67,26 @@ def queue_back_markup(_, CPLAY):
 def aq_markup(_, chat_id):
     buttons = [
         [
+            InlineKeyboardButton(text=" ^}^z ^}^z", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text=" ^f ", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text=" ^`  ^` I", callback_data=f"ADMIN Skip|{chat_id}"),
+        ],
+        [
             InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
-                    callback_data="close",
+                text=" ^`   ^}^p^r  ^|  ^x  ^x  ^o ^`  ^{  ^` ", url=config.SUPPORT_CHAT
+            ),
+            InlineKeyboardButton(
+                text=" ^`   ^}^p^t  ^x  ^e  ^`  ^{  ^gs  ^` ", url=config.SUPPORT_CHANNEL
             ),
         ],
+        [
+            InlineKeyboardButton(
+                text=" ^`   ^}^p^c  ^g     ^o ^=  ^o  ^x  ^g ^`  ^` ", user_id=config.OWNER_ID,
+            ),
+        ],
+        [InlineKeyboardButton(text="[ ^|^w] ^}^p^b ^=  ^os  ^g[ ^|^w]", callback_data="close")],
     ]
     return buttons
+
