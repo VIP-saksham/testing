@@ -1,7 +1,8 @@
 import math
-
+from config import OWNER_ID, SUPPORT_CHAT
 from pyrogram.types import InlineKeyboardButton
-
+import config
+from AviaxMusic import app
 from AviaxMusic.utils.formatters import time_to_seconds
 
 
@@ -33,38 +34,49 @@ def stream_markup_timer(_, chat_id, played, dur):
     percentage = (played_sec / duration_sec) * 100
     umm = math.floor(percentage)
     if 0 < umm <= 10:
-        bar = "◉—————————"
+        bar = " ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 10 < umm < 20:
-        bar = "—◉————————"
+        bar = "- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 20 <= umm < 30:
-        bar = "——◉———————"
+        bar = "- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 30 <= umm < 40:
-        bar = "———◉——————"
+        bar = "- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 40 <= umm < 50:
-        bar = "————◉—————"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 50 <= umm < 60:
-        bar = "—————◉————"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 60 <= umm < 70:
-        bar = "——————◉———"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^` ^g ^t^`"
     elif 70 <= umm < 80:
-        bar = "———————◉——"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^` ^g ^t^`"
     elif 80 <= umm < 95:
-        bar = "————————◉—"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g ^t^`"
     else:
-        bar = "—————————◉"
+        bar = "- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o- ^k ^o ^|^d ^g"
     buttons = [
-        [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
         [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
+        ],
+                [
+         InlineKeyboardButton(text=_["S_B_3"], url=f"https://t.me/{app.username}?startgroup=true",)
+        ],
+        [
+            InlineKeyboardButton(text=" ^}^z ^}^z", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text=" ^f ", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text=" ^`  ^` I", callback_data=f"ADMIN Skip|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="[ ^=^g  ^=^g ]  ^}^p^n       ^g ^`  ^` ", user_id=config.OWNER_ID,
+            ),
+            InlineKeyboardButton(
+                text=" ^`   ^}^p^t  ^x  ^e  ^`  ^{  ^gs  ^` ", url=config.SUPPORT_CHANNEL
+            ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -74,11 +86,19 @@ def stream_markup_timer(_, chat_id, played, dur):
 def stream_markup(_, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text=" ^}^z ^}^z", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text=" ^f ", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Stop|{chat_id}"),
+            InlineKeyboardButton(text=" ^`  ^` I", callback_data=f"ADMIN Skip|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text="[ ^=^g  ^=^g ]  ^}^p^n       ^g ^`  ^` ", user_id=config.OWNER_ID,
+            ),
+            InlineKeyboardButton(
+                text=" ^`   ^}^p^t  ^x  ^e  ^`  ^{  ^gs  ^` ", url=config.SUPPORT_CHANNEL
+            ),
         ],
         [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
@@ -90,11 +110,11 @@ def playlist_markup(_, videoid, user_id, ptype, channel, fplay):
         [
             InlineKeyboardButton(
                 text=_["P_B_1"],
-                callback_data=f"AviaxPlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
+                callback_data=f"AlonePlaylists {videoid}|{user_id}|{ptype}|a|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
                 text=_["P_B_2"],
-                callback_data=f"AviaxPlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
+                callback_data=f"AlonePlaylists {videoid}|{user_id}|{ptype}|v|{channel}|{fplay}",
             ),
         ],
         [
@@ -140,7 +160,7 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
         ],
         [
             InlineKeyboardButton(
-                text="◁",
+                text=" ^w^a",
                 callback_data=f"slider B|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
             InlineKeyboardButton(
@@ -148,9 +168,41 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
                 callback_data=f"forceclose {query}|{user_id}",
             ),
             InlineKeyboardButton(
-                text="▷",
+                text=" ^v ",
                 callback_data=f"slider F|{query_type}|{query}|{user_id}|{channel}|{fplay}",
             ),
         ],
     ]
     return buttons
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
