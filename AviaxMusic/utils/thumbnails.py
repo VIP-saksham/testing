@@ -86,7 +86,7 @@ async def get_thumb(videoid: str) -> str:
     except:
         brand_font = ImageFont.load_default()
 
-    brand = "BADNAM BOTS"
+    brand = "DREAM BOTS"
     b_w, b_h = draw.textbbox((0, 0), brand, font=brand_font)[2:]
     draw.text((1280 - b_w - 25, 25), brand, fill="yellow", font=brand_font)
 
@@ -99,3 +99,4 @@ async def get_thumb(videoid: str) -> str:
         pass
 
     return cache_path
+
