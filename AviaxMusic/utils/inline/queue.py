@@ -1,9 +1,11 @@
 import config
 from typing import Union
-from config import OWNER_ID
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
+# ---------------------------------------------------
+# MAIN QUEUE BUTTONS (View Queue / Time Info / Close)
+# ---------------------------------------------------
 def queue_markup(
     _,
     DURATION,
@@ -12,81 +14,59 @@ def queue_markup(
     played: Union[bool, int] = None,
     dur: Union[bool, int] = None,
 ):
-    not_dur = [
+
+    buttons = [
         [
-            InlineKeyboardButton(
-                text=_["QU_B_1"],
-                callback_data=f"GetQueued {CPLAY}|{videoid}",
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data="close",
-            ),
-        ]
-    ]
-    dur = [
-        [
-            InlineKeyboardButton(
-                text=_["QU_B_2"].format(played, dur),
-                callback_data="GetTimer",
-            )
+            InlineKeyboardButton(" View Queue", callback_data=f"GetQueued {CPLAY}|{videoid}")
         ],
         [
-            InlineKeyboardButton(
-                text=_["QU_B_1"],
-                callback_data=f"GetQueued {CPLAY}|{videoid}",
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"],
-                callback_data="close",
-            ),
+            InlineKeyboardButton("   Time Info", callback_data="GetTimer")
+        ],
+        [
+            InlineKeyboardButton("   Close Panel", callback_data="close")
         ],
     ]
-    upl = InlineKeyboardMarkup(not_dur if DURATION == "Unknown" else dur)
-    return upl
+
+    return InlineKeyboardMarkup(buttons)
 
 
+# ---------------------------------------------------
+# BACK BUTTON (When user opens Time Info or Queue)
+# ---------------------------------------------------
 def queue_back_markup(_, CPLAY):
-    upl = InlineKeyboardMarkup(
+    return InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton(
-                    text=_["BACK_BUTTON"],
-                    callback_data=f"queue_back_timer {CPLAY}",
-                ),
-                InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"],
-                    callback_data="close",
-                ),
+                InlineKeyboardButton("  Back", callback_data=f"queue_back_timer {CPLAY}"),
+                InlineKeyboardButton(" Close", callback_data="close"),
             ]
         ]
     )
-    return upl
 
 
+# ---------------------------------------------------
+# AQ CONTROL PANEL (Unique / Compact / 3D feel)
+# ---------------------------------------------------
 def aq_markup(_, chat_id):
     buttons = [
+        # Row 1: Main controls
         [
-            InlineKeyboardButton(text=" ^}^z ^}^z", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text=" ^f ", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text=" ^v ", callback_data=f"ADMIN Stop|{chat_id}"),
-            InlineKeyboardButton(text=" ^`  ^` I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton("⤷ Play/Pause ", callback_data=f"ADMIN PauseResume|{chat_id}"),
+            InlineKeyboardButton(" Skip ⤶", callback_data=f"ADMIN Skip|{chat_id}"),
         ],
+                [InlineKeyboardButton("⤷ Close ⤶", callback_data="close"),],
+        # Row 2: Replay & Stop
         [
-            InlineKeyboardButton(
-                text=" ^`   ^}^p^r  ^|  ^x  ^x  ^o ^`  ^{  ^` ", url=config.SUPPORT_CHAT
-            ),
-            InlineKeyboardButton(
-                text=" ^`   ^}^p^t  ^x  ^e  ^`  ^{  ^gs  ^` ", url=config.SUPPORT_CHANNEL
-            ),
+            InlineKeyboardButton("⤷ Replay", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton("Stop ⤶", callback_data=f"ADMIN Stop|{chat_id}"),
         ],
+
+        # Row 3: Support & Updates
         [
-            InlineKeyboardButton(
-                text=" ^`   ^}^p^c  ^g     ^o ^=  ^o  ^x  ^g ^`  ^` ", user_id=config.OWNER_ID,
-            ),
         ],
-        [InlineKeyboardButton(text="[ ^|^w] ^}^p^b ^=  ^os  ^g[ ^|^w]", callback_data="close")],
+
+        # Row 4: Owner & Close
+        [
+        ],
     ]
     return buttons
-
