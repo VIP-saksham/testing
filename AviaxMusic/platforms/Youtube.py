@@ -9,7 +9,6 @@ from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from py_yt import VideosSearch
 from AviaxMusic.utils.database import is_on_off, get_assistant
-from AviaxMusic import nand
 from AviaxMusic.utils.formatters import time_to_seconds
 from AviaxMusic.core.userbot import assistants
 import random
@@ -487,3 +486,4 @@ class YouTubeAPI:
         except Exception as e:
             print(f"Download failed: {e}")
             return None, False
+
