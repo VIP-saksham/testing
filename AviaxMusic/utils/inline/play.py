@@ -5,7 +5,6 @@ from AviaxMusic import app
 from AviaxMusic.utils.formatters import time_to_seconds
 
 OWNER_ID = config.OWNER_ID
-SUPPORT_CHAT = config.SUPPORT_CHAT
 
 
 # -----------------------------
@@ -192,3 +191,4 @@ def slider_markup(_, videoid, user_id, query, query_type, channel, fplay):
             ),
         ],
     ]
+
