@@ -8,18 +8,25 @@ from config import LOG_GROUP_ID
 async def play_logs(message, streamtype):
     if await is_on_off(2):
         logger_text = f"""
-<b>{app.mention} ᴘʟᴀʏ ʟᴏɢ</b>
+<b>🤣 {app.mention} — New Play Log Drop Ho Gaya!</b>
 
-<b>ᴄʜᴀᴛ ɪᴅ :</b> <code>{message.chat.id}</code>
-<b>ᴄʜᴀᴛ ɴᴀᴍᴇ :</b> {message.chat.title}
-<b>ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.chat.username}
+<b>📍 Chat Ka Pata:</b>
+• <b>ID:</b> <code>{message.chat.id}</code>
+• <b>Name:</b> {message.chat.title}
+• <b>Username:</b> @{message.chat.username if message.chat.username else "🤡 No Username"}
 
-<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>
-<b>ɴᴀᴍᴇ :</b> {message.from_user.mention}
-<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}
+<b>🕺 User Ka Scene:</b>
+• <b>User ID:</b> <code>{message.from_user.id}</code>
+• <b>Name:</b> {message.from_user.mention}
+• <b>Username:</b> @{message.from_user.username if message.from_user.username else "😎 Secret User"}
 
-<b>ǫᴜᴇʀʏ :</b> {message.text.split(None, 1)[1]}
-<b>sᴛʀᴇᴀᴍᴛʏᴘᴇ :</b> {streamtype}"""
+<b>🔍 Query Dekh Zara:</b> {message.text.split(None, 1)[1]}
+<b>🎶 Stream Type:</b> {streamtype}
+
+<b>📢 Note:</b>  
+User ne gaana lagaya hai,  
+bot bol raha: “Chal bhai, bajate hain!” 🎧🔥
+        """
         if message.chat.id != LOG_GROUP_ID:
             try:
                 await app.send_message(
