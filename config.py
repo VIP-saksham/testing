@@ -45,8 +45,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  # Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/AuraVisual")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/HeavenChatGroup")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/THeDreamNetwork")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/DREAMCHATZ")
 
 # Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
@@ -87,18 +87,18 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://files.catbox.moe/7db3yj.png"
+    "START_IMG_URL", "https://files.catbox.moe/8n1yak.jpg"
 )
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://files.catbox.moe/7db3yj.png"
+    "PING_IMG_URL", "https://files.catbox.moe/8n1yak.jpg"
 )
 PLAYLIST_IMG_URL = "https://files.catbox.moe/7db3yj.png"
-STATS_IMG_URL = "https://files.catbox.moe/7db3yj.png"
+STATS_IMG_URL = "https://files.catbox.moe/yp3zym.jpg"
 TELEGRAM_AUDIO_URL = "https://files.catbox.moe/7db3yj.png"
 TELEGRAM_VIDEO_URL = "https://files.catbox.moe/7db3yj.png"
 STREAM_IMG_URL = "https://files.catbox.moe/7db3yj.png"
 SOUNCLOUD_IMG_URL = "https://files.catbox.moe/7db3yj.png"
-YOUTUBE_IMG_URL = "https://files.catbox.moe/7db3yj.png"
+YOUTUBE_IMG_URL = "https://files.catbox.moe/yp3zym.jpg"
 SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/7db3yj.png"
 SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/7db3yj.png"
 SPOTIFY_PLAYLIST_IMG_URL = "https://files.catbox.moe/7db3yj.png"
@@ -123,5 +123,6 @@ if SUPPORT_GROUP:
         raise SystemExit(
             "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
         )
+
 
 
