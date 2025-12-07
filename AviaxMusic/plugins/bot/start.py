@@ -24,6 +24,40 @@ from AviaxMusic.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS
 from strings import get_string
 
+# ===============================
+# BACK BUTTON HANDLER FOR HELP
+# ===============================
+
+from AviaxMusic.plugins.bot.help import help_pannel
+
+@app.on_callback_query(filters.regex("^settings_back_helper$") & ~BANNED_USERS)
+async def settings_back_handler(client, CallbackQuery):
+    lang = await get_lang(CallbackQuery.message.chat.id)
+    _ = get_string(lang)
+
+    await CallbackQuery.answer()
+
+    try:
+        # Try editing text (for normal help menu)
+        await CallbackQuery.edit_message_text(
+            _["help_1"].format(config.SUPPORT_GROUP),
+            reply_markup=help_pannel(_, True)
+        )
+    except:
+        # For photo messages (start menu), delete & resend
+        try:
+            await CallbackQuery.message.delete()
+        except:
+            pass
+
+        await client.send_photo(
+            chat_id=CallbackQuery.message.chat.id,
+            photo=config.START_IMG_URL,
+            caption=_["help_1"].format(config.SUPPORT_GROUP),
+            reply_markup=help_pannel(_, True),
+        )
+
+
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -153,3 +187,4 @@ async def welcome(client, message: Message):
                 await message.stop_propagation()
         except Exception as ex:
             print(ex)
+
