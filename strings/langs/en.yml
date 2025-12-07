@@ -90,7 +90,7 @@ admin_40: "Upvoted."
 
 start_1: "⚡ Yo yo! {0} is alive & vibin’ ⚡\n\n⏳ <b>Uptime:</b> {1} — still rocking!"
 
-start_2: "<b>────「 {1} 」────</b>\n\n👋 Heya {0}! \nI’m your super-speedy music bot, loaded with funky moves 🎶\n\n🎛️ <b>Uptime:</b> {2}\n💾 <b>Storage:</b> {3}\n⚡ <b>CPU:</b> {4}\n🧠 <b>RAM:</b> {5}\n\nHit Help to see all the crazy things I can do 🚀"
+start_2: "Dora ra~ Dora ra {0}!/n/n🎉 Welcome aboard, my friend!/nI’m your pocket-sized music buddy, ready to sprinkle some beats and good vibes in this chat! 🎶✨/n/nHold tight, the party’s about to get wild! 🚀💥/nType /help to see all the crazy moves I can pull! 🎧🎤"
 
 start_3: "🎵 Yo {0}! \nI’m {1} — your personal DJ 🤘\n\nThanks for adding me to {2}! Now let's drop some beats in {3} 🎧"
 
@@ -345,4 +345,5 @@ gban_9 : "» 𝖫𝗂𝖿𝗍𝖾𝖽 𝖦𝗅𝗈𝖻𝖺𝗅 𝖡𝖺𝗇 𝖥
 gban_10 : "» 𝖭𝗈 𝖮𝗇𝖾 𝖨 𝖦𝗅𝗈𝖻𝖺𝗅𝗅𝗒 𝖡𝖺𝗇𝗇𝖾𝖽 𝖥𝗋𝗈𝗆  𝖳𝗁𝖾 𝖡𝗈𝗍 ."
 gban_11 : "» 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖦𝖻𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 𝖫𝗂𝗌𝗍 ..."
 gban_12 : "🙂 <b>𝖦𝗅𝗈𝖻𝖺𝗅𝗅𝗒 𝖡𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 :</b>\n\n"
+
 
