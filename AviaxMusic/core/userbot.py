@@ -51,8 +51,8 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.five.join_chat("theacebotz")
-                await self.one.join_chat("ace_netz")
+                await self.one.join_chat("TheAceBotz")
+                await self.one.join_chat("Ace_netz")
             except:
                 pass
             assistants.append(1)
@@ -72,8 +72,8 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.five.join_chat("theacebotz")
-                await self.one.join_chat("ace_netz")
+                await self.two.join_chat("TheAceBotz")
+                await self.one.join_chat("Ace_netz")
             except:
                 pass
             assistants.append(2)
@@ -93,8 +93,8 @@ class Userbot(Client):
         if config.STRING3:
             await self.three.start()
             try:
-               await self.five.join_chat("theacebotz")
-                await self.one.join_chat("ace_netz")
+                await self.three.join_chat("TheAceBotz")
+                await self.one.join_chat("Ace_netz")
             except:
                 pass
             assistants.append(3)
@@ -114,8 +114,8 @@ class Userbot(Client):
         if config.STRING4:
             await self.four.start()
             try:
-                await self.five.join_chat("theacebotz")
-                await self.one.join_chat("ace_netz")
+                await self.four.join_chat("TheAceBotz")
+                await self.one.join_chat("Ace_netz")
             except:
                 pass
             assistants.append(4)
@@ -135,8 +135,8 @@ class Userbot(Client):
         if config.STRING5:
             await self.five.start()
             try:
-                await self.five.join_chat("theacebotz")
-                await self.one.join_chat("ace_netz")
+                await self.five.join_chat("TheAceBotz")
+                await self.one.join_chat("Ace_netz")
             except:
                 pass
             assistants.append(5)
@@ -168,5 +168,3 @@ class Userbot(Client):
                 await self.five.stop()
         except:
             pass
-
-
