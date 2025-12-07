@@ -76,6 +76,16 @@
 
       },
 
+      "DEV_ID": {
+
+        "description": "The user id of user whom you would like to add as DEVELOPER.",
+
+        "value": "",
+
+        "required": true
+
+      },  
+
       "STRING_SESSION": {
 
         "description": "A Pyrogram v2 String Session from Replit.",
