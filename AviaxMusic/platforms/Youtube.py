@@ -8,21 +8,21 @@ import yt_dlp
 from pyrogram.enums import MessageEntityType
 from pyrogram.types import Message
 from youtubesearchpython.__future__ import VideosSearch
-from AnonXMusic.utils.database import is_on_off
-from AnonXMusic import app
-from AnonXMusic.utils.formatters import time_to_seconds
+from AviaxMusic.utils.database import is_on_off
+from AviaxMusic import app
+from AviaxMusic.utils.formatters import time_to_seconds
 import random
 import logging
 import aiohttp
-from AnonXMusic import LOGGER
+from AviaxMusic import LOGGER
 from urllib.parse import urlparse
 
 # ---------------- Configuration ----------------
 UPLOAD_CHANNEL = "@NakshuMuiscDB"           # change if needed
-CACHE_FILE = "AnonXMusic/yt_cache.json"
+CACHE_FILE = "AviaxMusic/yt_cache.json"
 YOUR_API_URL = None
 DOWNLOAD_DIR = "downloads"
-COOKIES_DIR = "AnonXMusic/cookies"
+COOKIES_DIR = "AviaxMusic/cookies"
 
 os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 os.makedirs(os.path.dirname(CACHE_FILE) or ".", exist_ok=True)
@@ -46,7 +46,7 @@ async def load_api_url():
     Returns the selected YOUR_API_URL string.
     """
     global YOUR_API_URL
-    logger = LOGGER("AnonXMusic/platforms/Youtube.py")
+    logger = LOGGER("AviaxMusic/platforms/Youtube.py")
 
     # environment variables (preferred)
     env_val = os.getenv("YOUR_API_URL") or os.getenv("MUSIC_API_URL")
@@ -92,7 +92,7 @@ def load_cache():
             with open(CACHE_FILE, "r") as f:
                 return json.load(f)
     except Exception as e:
-        LOGGER("AnonXMusic/platforms/Youtube.py").warning(f"Failed loading cache: {e}")
+        LOGGER("AviaxMusic/platforms/Youtube.py").warning(f"Failed loading cache: {e}")
     return {}
 
 
@@ -102,7 +102,7 @@ def save_cache(cache: dict):
         with open(CACHE_FILE, "w") as f:
             json.dump(cache, f, indent=2)
     except Exception as e:
-        LOGGER("AnonXMusic/platforms/Youtube.py").error(f"Failed saving cache: {e}")
+        LOGGER("AviaxMusic/platforms/Youtube.py").error(f"Failed saving cache: {e}")
 
 
 # ---------------- Telegram fetch ----------------
@@ -111,7 +111,7 @@ async def upload_to_channel_in_background(file_path: str, video_id: str, file_ty
     Placeholder uploader — replace with your actual channel upload logic.
     This runs in background to push downloaded files to UPLOAD_CHANNEL.
     """
-    logger = LOGGER("AnonXMusic/platforms/Youtube.py")
+    logger = LOGGER("AviaxMusic/platforms/Youtube.py")
     try:
         # If you have an async upload function, call it here. For now we log only.
         logger.info(f"(background) would upload {file_type} for {video_id}: {file_path}")
@@ -128,7 +128,7 @@ le_type: str) -> Union[str, None]:
     Download media from a Telegram link (https://t.me/channel/message or https://t.me/c/xxxx/123).
     Returns local path or None.
     """
-    logger = LOGGER("AnonXMusic/platforms/Youtube.py")
+    logger = LOGGER("AviaxMusic/platforms/Youtube.py")
     try:
         extension = ".webm" if file_type == "audio" else ".mkv"
         file_path = os.path.join(DOWNLOAD_DIR, f"{video_id}{extension}")
@@ -203,7 +203,7 @@ async def download_song(link: str) -> Union[str, None]:
     Helper to download audio via YOUR_API_URL endpoint; mirrors original pattern used in project.
     """
     global YOUR_API_URL
-    logger = LOGGER("AnonXMusic/platforms/Youtube.py")
+    logger = LOGGER("AviaxMusic/platforms/Youtube.py")
 
     if not YOUR_API_URL:
         await load_api_url()
@@ -290,7 +290,7 @@ async def download_video(link: str) -> Union[str, None]:
     Video workflow identical to audio but for video (.mkv)
     """
     global YOUR_API_URL
-    logger = LOGGER("AnonXMusic/platforms/Youtube.py")
+    logger = LOGGER("AviaxMusic/platforms/Youtube.py")
 
     if not YOUR_API_URL:
         await load_api_url()
@@ -644,3 +644,4 @@ title = result["title"]
         except Exception as e:
             print(f"Download failed: {e}")
             return None, False
+
