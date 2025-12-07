@@ -1,3 +1,93 @@
+HELP_ADM = """
+👑 **ADMIN COMMANDS**
+
+Admins get full control over music & moderation.
+
+**🎵 Music Controls:**
+• /pause – Song pause karo  
+• /resume – Resume the track  
+• /skip – Next track  
+• /stop – Stop playback  
+• /shuffle – Queue shuffle  
+• /queue – Show current queue
+
+**🛡️ Admin Tools:**
+• /ban – User ban  
+• /unban – User unban  
+• /mute – User mute  
+• /unmute – Unmute  
+• /del – Delete user message
+
+Tip: Admins power = Server ka backbone 😎
+"""
+
+
+HELP_PUB = """
+🌐 **PUBLIC COMMANDS**
+
+Public users ke liye daily use commands:
+
+**🎵 Music:**
+• /play – Song play  
+• /vplay – Video play  
+• /lyrics – Lyrics dikhaye  
+• /yt – YouTube search
+
+**ℹ️ Info Commands:**
+• /ping – Bot speed  
+• /alive – Bot status  
+• /help – Help panel
+
+**😂 Fun Commands:**
+• /animequote – Random anime line  
+• /meme – Random meme  
+• /gif – Random anime gif
+
+Enjoy the anime vibes 🔥
+"""
+
+
+HELP_SUDO = """
+🛡️ **SUDO COMMANDS**
+
+Sudo users are mini-Owne₹ mode 😈
+
+**⚙️ Power Controls:**
+• /r – Restart bot  
+• /leave – Bot leave group  
+• /clean – Remove temp files  
+• /broadcast – Broadcast to all users
+
+**💾 DB Control:**
+• /stats – Database stats  
+• /users – User list  
+• /block – Block user  
+• /unblock – Unblock user
+
+Sudo = Half Dev + Half Boss 😎
+"""
+
+
+HELP_GAME = """
+🎮 **GAME COMMANDS**
+
+Chat ko alive rakhne ke liye interactive mini-games:
+
+**🔥 Mini Games:**
+• /guess – Guess the number  
+• /spin – Spin & win  
+• /dice – Random dice  
+• /truth – Truth question  
+• /dare – Dare challenge  
+• /fight – Anime battle simulation  
+• /ship – Relationship % meter
+
+More games coming soon… 🎉
+"""
+
+
+
+
 HELP_1 = """<b><u>ᴀᴅᴍɪɴ ᴄᴏᴍᴍᴀɴᴅs :</b></u>
 
 ᴊᴜsᴛ ᴀᴅᴅ <b>ᴄ</b> ɪɴ ᴛʜᴇ sᴛᴀʀᴛɪɴɢ ᴏғ ᴛʜᴇ ᴄᴏᴍᴍᴀɴᴅs ᴛᴏ ᴜsᴇ ᴛʜᴇᴍ ғᴏʀ ᴄʜᴀɴɴᴇʟ.
@@ -155,3 +245,4 @@ HELP_16 = """
 
 /privacy : Display the privacy statement of {0}
 """
+
