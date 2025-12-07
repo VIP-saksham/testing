@@ -90,7 +90,7 @@ admin_40: "Upvoted."
 
 start_1: "⚡ Yo yo! {0} is alive & vibin’ ⚡\n\n⏳ <b>Uptime:</b> {1} — still rocking!"
 
-start_2: "Dora ra~ Dora ra {0}!/n/n🎉 Welcome aboard, my friend!/nI’m your pocket-sized music buddy, ready to sprinkle some beats and good vibes in this chat! 🎶✨/n/nHold tight, the party’s about to get wild! 🚀💥/nType /help to see all the crazy moves I can pull! 🎧🎤"
+start_2: "Dora ra~ Dora ra {0}!\n\n🎉 Welcome aboard, my friend!\nI’m your pocket-sized music buddy, ready to sprinkle some beats and good vibes in this chat! 🎶✨\n\nHold tight, the party’s about to get wild! 🚀💥\nType /help to see all the crazy moves I can pull! 🎧🎤"
 
 start_3: "🎵 Yo {0}! \nI’m {1} — your personal DJ 🤘\n\nThanks for adding me to {2}! Now let's drop some beats in {3} 🎧"
 
@@ -165,13 +165,19 @@ play_11: "🎧 {0} Spotify Player\n\nRequested by: {1}"
 
 play_12: "🍏 {0} Apple Player\n\nRequested by: {1}"
 
-play_13: "🔴 Live Stream detected!/n/n You sure you wanna play this live madness? 🤯"
+play_13: "🔴 Live Stream detected!
 
-play_14: "❌ Couldn’t fetch track details…/n/n Try another one? 🎶"
+ You sure you wanna play this live madness? 🤯"
+
+play_14: "❌ Couldn’t fetch track details…
+
+ Try another one? 🎶"
 
 play_15: "⚠️ Only Spotify tracks, albums, artists & playlists are supported here. 😉"
 
-play_16: "🗣️ No active voice chat detected!/n/n Gotta have one to force play 😅"
+play_16: "🗣️ No active voice chat detected!
+
+ Gotta have one to force play 😅"
 
 play_17: "⚠️ Turn on VideoChat first, or I can’t stream URLs!"
 
@@ -181,7 +187,9 @@ play_19: "🎶 Queued Playlist:"
 
 play_20: "🔢 Queue Position:"
 
-play_21: "✅ Added {0} tracks to the queue!/n/n Check ‘em here: <a href={1}>Click Here</a>"
+play_21: "✅ Added {0} tracks to the queue!
+
+ Check ‘em here: <a href={1}>Click Here</a>"
 
 play_22: "🎚️ Select how you wanna play your requests in this group: {0}"
 
@@ -191,7 +199,11 @@ str_3 : "𝖥𝖺𝗂𝗅𝖾𝖽 𝖳𝗈 𝖲𝗍𝗋𝖾𝖺𝗆 𝖸𝗈𝗎
 
 ping_1: "⚡ Pinging {0}… Hold tight, loading some speed! ⏳"
 
-ping_2: "🏓 PONG! <code>{0} ms</code>\n\n**{1} System Stats:**\n\n↪ Uptime: {2}/n↪ RAM: {3}/n↪ CPU: {4}/n↪ Disk: {5}/n↪ Py-TgCalls: <code>{6} ms</code> 💻"
+ping_2: "🏓 PONG! <code>{0} ms</code>\n\n**{1} System Stats:**\n\n↪ Uptime: {2}
+↪ RAM: {3}
+↪ CPU: {4}
+↪ Disk: {5}
+↪ Py-TgCalls: <code>{6} ms</code> 💻"
 
 queue_1: "⏳ Fetching your queue… Almost there… ✨"
 
@@ -201,7 +213,8 @@ queue_3: "<u>🎵 Click below to peep the full queue:</u> <a href={0}>Here</a>"
 
 queue_4: "➤ Added to Queue #{0}\n\n‣ Title: {1}\n‣ Duration: {2} mins\n‣ Requested by: {3} 🎧"
 
-queue_5: "🎶 Only one track in the playlist right now…/nAdd more to get the party started! 🥳"
+queue_5: "🎶 Only one track in the playlist right now…
+Add more to get the party started! 🥳"
 
 queue_6: "🕚 Duration: Unknown Stream\n\nClick the button below to see the full queue 🔽"
 
@@ -345,5 +358,6 @@ gban_9 : "» 𝖫𝗂𝖿𝗍𝖾𝖽 𝖦𝗅𝗈𝖻𝖺𝗅 𝖡𝖺𝗇 𝖥
 gban_10 : "» 𝖭𝗈 𝖮𝗇𝖾 𝖨 𝖦𝗅𝗈𝖻𝖺𝗅𝗅𝗒 𝖡𝖺𝗇𝗇𝖾𝖽 𝖥𝗋𝗈𝗆  𝖳𝗁𝖾 𝖡𝗈𝗍 ."
 gban_11 : "» 𝖥𝖾𝗍𝖼𝗁𝗂𝗇𝗀 𝖦𝖻𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 𝖫𝗂𝗌𝗍 ..."
 gban_12 : "🙂 <b>𝖦𝗅𝗈𝖻𝖺𝗅𝗅𝗒 𝖡𝖺𝗇𝗇𝖾𝖽 𝖴𝗌𝖾𝗋𝗌 :</b>\n\n"
+
 
 
